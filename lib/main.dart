@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
         theme: ThemeData.light(),
         debugShowCheckedModeBanner: false,
-        home: HomePage());
+        home: const HomePage());
   }
 }
 
@@ -43,11 +43,11 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.amber.shade100,
-        title: Text('Carbon Footprint Calculator'),
-        actions: [IconButton(onPressed: () {}, icon: Icon(Icons.menu))],
+        title: const Text('Carbon Footprint Calculator'),
+        actions: [IconButton(onPressed: () {}, icon: const Icon(Icons.menu))],
       ),
       body: Padding(
-        padding: EdgeInsets.all(20),
+        padding: const EdgeInsets.all(20),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -57,19 +57,19 @@ class _HomePageState extends State<HomePage> {
               onTapOutside: releaseKeyboard,
               controller: _transportcontroller,
               decoration:
-                  InputDecoration(hintText: "Daily commute distance (in km)"),
+                  const InputDecoration(hintText: "Daily commute distance (in km)"),
             ),
-            SizedBox(
+            const SizedBox(
               height: 30,
             ),
             TextField(
               keyboardType: TextInputType.number,
               onTapOutside: releaseKeyboard,
               controller: _electricitycontroller,
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                   hintText: "Monthly electricity consumption (in kWh)"),
             ),
-            SizedBox(
+            const SizedBox(
               height: 30,
             ),
             TextField(
@@ -77,18 +77,18 @@ class _HomePageState extends State<HomePage> {
               onTapOutside: releaseKeyboard,
               controller: _wastecontroller,
               decoration:
-                  InputDecoration(hintText: "Waste generated per week (in kg)"),
+                  const InputDecoration(hintText: "Waste generated per week (in kg)"),
             ),
-            SizedBox(
+            const SizedBox(
               height: 30,
             ),
             TextField(
               keyboardType: TextInputType.number,
               onTapOutside: releaseKeyboard,
               controller: _dietcontroller,
-              decoration: InputDecoration(hintText: "Number of meals per day"),
+              decoration: const InputDecoration(hintText: "Number of meals per day"),
             ),
-            SizedBox(
+            const SizedBox(
               height: 40,
             ),
             ElevatedButton(
@@ -97,7 +97,7 @@ class _HomePageState extends State<HomePage> {
                       _dietcontroller.text == '' ||
                       _electricitycontroller.text == '' ||
                       _wastecontroller.text == '') {
-                    final snackBar = SnackBar(
+                    const snackBar = SnackBar(
                         content: Row(
                       children: [
                         Icon(Icons.warning),
@@ -116,7 +116,7 @@ class _HomePageState extends State<HomePage> {
                             ResultsPage(dataHandler: dataHandler)));
                   }
                 },
-                child: Text("Submit"))
+                child: const Text("Submit"))
           ],
         ),
       ),

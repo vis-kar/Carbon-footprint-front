@@ -9,7 +9,7 @@ class ResultsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Results'),
+        title: const Text('Results'),
         backgroundColor: Colors.amber.shade100,
       ),
       body: Center(
@@ -18,15 +18,15 @@ class ResultsPage extends StatelessWidget {
           builder: (context, snapshot) {
             if (snapshot.connectionState == ConnectionState.waiting) {
               // Show loading indicator while waiting
-              return CircularProgressIndicator();
+              return const CircularProgressIndicator();
             } else if (snapshot.hasError) {
-              return Text('Error calculating your carbon footprint');
+              return const Text('Error calculating your carbon footprint');
             } else {
               // Display the built content
               return Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text('Your Carbon Footprint in metric tons:'),
+                  const Text('Your Carbon Footprint in metric tons:'),
                   Text(snapshot.data!['result'].toString())
                 ],
               );
