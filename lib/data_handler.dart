@@ -20,8 +20,6 @@ class DataHandler {
           'waste': waste
         }));
     final data = jsonDecode(response.body) as Map<String, dynamic>;
-    print(data);
-    print('!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!1');
     return data;
   }
 }

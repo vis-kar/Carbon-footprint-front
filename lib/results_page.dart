@@ -8,6 +8,9 @@ class ResultsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text('Results'),
+      ),
       body: Center(
         child: FutureBuilder<Map<String, dynamic>>(
           future: dataHandler.fetchData(),
