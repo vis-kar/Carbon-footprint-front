@@ -10,6 +10,7 @@ class ResultsPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text('Results'),
+        backgroundColor: Colors.amber.shade100,
       ),
       body: Center(
         child: FutureBuilder<Map<String, dynamic>>(
