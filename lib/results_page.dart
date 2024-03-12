@@ -1,5 +1,6 @@
 import 'package:carbon_footprint/data_handler.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 class ResultsPage extends StatelessWidget {
   final DataHandler dataHandler;
@@ -26,8 +27,30 @@ class ResultsPage extends StatelessWidget {
               return Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  const Text('Your Carbon Footprint in metric tons:'),
-                  Text(snapshot.data!['result'].toString())
+                  Text(
+                    'Your Carbon Footprint is',
+                    style:
+                        TextStyle(color: Colors.amber.shade700, fontSize: 27),
+                  ),
+                  const SizedBox(
+                    height: 22,
+                  ),
+                  Container(
+                    padding: EdgeInsets.all(12),
+                    color: Colors.lightGreen,
+                    child: Text(
+                      (snapshot.data!['result'].toStringAsFixed(2)).toString(),
+                      style: const TextStyle(
+                          fontWeight: FontWeight.w900,
+                          fontSize: 25,
+                          
+                        ),
+                    ),
+                  ),
+                  Text(
+                    'Metric tons',
+                    style: TextStyle(fontSize: 20),
+                  )
                 ],
               );
             }
